@@ -51,7 +51,7 @@
 
                 //validate password
                 var password_filter = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
-                    if(n == "" || !password_filter.test(n)){
+                if(n == "" || !password_filter.test(n)){
                     return alert("Please provide a valid password");
                 }                
 
