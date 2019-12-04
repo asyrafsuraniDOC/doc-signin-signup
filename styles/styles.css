@@ -1,0 +1,308 @@
+
+    html,body{
+        font-family: sans-serif;
+        margin:0;
+        padding:0;
+    }
+
+    .login-image-column{
+        display: block;
+        width:35%;
+    }
+
+    .login-image{
+        background-image: url('../images/DOC-Sign-Up-background.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 753px;
+        padding: 20px 30px;
+        width:100%;
+    }
+
+    .login-form-column{  
+        /* margin: 8px;               */
+        width:65%;
+    }
+
+    .login-form-padding{
+        padding: 0 30%;
+    }
+
+    .login-division-border{
+        background: #ebebeb;
+        border: 0.5px solid #ebebeb;
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+
+    .login-welcome-text{
+        color:#2E5AA9;
+        font-size:40px;
+        line-height: 59px;
+    }
+
+    .login-text{
+        color:#3c3c3c;
+        font-size:14px;
+        line-height: 23px;
+    }
+
+    .password-validation-text{
+        color:#3c3c3c;
+        display: list-item;
+        font-size:12px;
+        line-height: 23px;        
+        margin-left: 14px;
+    }
+
+    .login-smalltext{
+        color:#3c3c3c;
+        font-size:12px;
+        line-height: 23px;
+        margin-bottom: 5px;
+    }
+
+    .login-or{
+        color:#3c3c3c;
+        font-size:12px;
+        line-height: 23px;
+        text-align: center;
+    }
+
+    .login-back{                
+        align-items: center;        
+        color: #3c3c3c;
+        display: flex;
+        font-size: 12px;
+        line-height: 23px;
+        padding: 15px;
+        text-decoration: none;
+    }
+
+    .login-back img{
+        width: 18px;
+    }
+
+    .login-textfield{
+        background-color: #ebebeb;
+        border: none;
+        border-radius:4px;                
+        height: 40px;
+        margin-bottom: 15px;
+        text-indent: 15px;
+        width: 100%;
+    }
+
+    .login-textfield:focus{
+        background-color: #e3f6fd;
+    }
+
+    .login-signIn-btn{
+        background-color: #41c0f1;
+        border: none;
+        border-radius: 4px;
+        color: #fff;
+        cursor: pointer;
+        height: 48px;
+        margin-top: 25px;
+        margin-bottom: 15px;
+        width:100%;
+    }
+
+    /* .login-signIn-btn:hover{
+        background-color: #41c0f1;
+    } */
+
+    /* input[type="submit" i]:disabled {
+        color: red;
+        background: black;
+    } */
+
+    .login-signIn-google-btn{
+        background-color: #4285F4;
+        border: none;
+        border-radius: 0 4px 4px 0;
+        color: #fff;
+        cursor: pointer;
+        height: 48px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        width:90%;
+    }
+
+    .login-google-btn-display{
+        align-items: center;
+        display: flex;                
+    }
+
+    .google-icon{
+        border: 1px solid #4285F4;
+        border-radius: 4px 0 0 4px;
+        height: 48px;
+        padding: 10px 5px;
+        text-align: center;
+        width:20%;
+    }
+
+    .google-icon svg{
+        width:24px;
+    }
+
+    .login-forgot-text{
+        color:#2E5AA9;
+        font-size:14px;
+        line-height: 23px;
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    .login-termcondition-text{
+        color:#3c3c3c;
+        font-size:14px;
+        line-height: 23px;
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    .password-visible-icon {
+        cursor: pointer;
+        float: right;
+        margin-right: 10px;
+        margin-top: -45px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .password-visible-icon img{
+        width: 20px;
+    }
+
+    @media (max-width:768px){
+        .login-form-padding{
+            padding: 0 20%;
+        }
+    }
+
+    @media (max-width:576px){
+        .login-image-column{
+            display: none;
+        }
+
+        .login-form-padding{
+            padding: unset;
+        }
+
+        .login-form-column{  
+            padding: 20px;
+            width:100%;
+        }
+
+        .login-back{
+            padding: unset;
+            padding-bottom: 50px;
+        }
+    }
+
+    /* Checkbox Custom from https://www.w3schools.com/howto/howto_css_custom_checkbox.asp */
+
+    .checkbox-contain {            
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .checkbox-contain input {
+        cursor: pointer;
+        height: 0;
+        opacity: 0;
+        position: absolute;
+        width: 0;
+    }
+
+    .checkmark {
+        background-color: #fff;  
+        border: 1px solid #2E5AA9;
+        border-radius: 2px;
+        height: 18px;  
+        /* margin: 5px 0px 0px 5px; */
+        position: absolute;  
+        width: 18px;
+    }
+
+    .checkbox-contain:hover input ~ .checkmark {
+        background-color: #2E5AA9;
+    }
+
+    .checkbox-contain input:checked ~ .checkmark {
+        background-color: #2E5AA9;
+    }
+
+    .checkmark:after {
+        content: "";
+        display: none;
+        position: absolute;
+    
+    }
+
+    .checkbox-contain input:checked ~ .checkmark:after {
+        display: block;
+    }
+
+    .checkbox-contain .checkmark:after {
+        border: 1px solid #fff;
+        border-width: 0px 1.2px 1.2px 0px;
+        height: 13px;
+        left: 5px;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        width: 6px;
+    }
+
+    @media (max-width: 576px){
+        .checkmark {
+            height: 19px;    
+            /* margin: -15px 0px 0px -10px;    */
+            width: 19px;
+        }  
+    }
+
+    /* Password validation W3Schools from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_password_val*/
+    /* The message box is shown when the user clicks on the password field */
+    .message-password-requirement {
+        display:block;
+    }
+    
+    .message-password-requirement p {        
+        font-size:12px;
+        margin: unset;
+        margin-bottom: 15px;
+        padding: 0 35px;
+    }
+    
+    /* Add a green text color and a checkmark when the requirements are right */
+    .valid {
+        color: green;
+    }
+    
+    .valid:before {
+        position: relative;
+        left: -35px;
+        content: "✔";
+    }
+    
+    /* Add a red text color and an "x" when the requirements are wrong */
+    .invalid {
+        color: red;
+    }
+    
+    .invalid:before {
+        position: relative;
+        left: -35px;
+        content: "✖";
+    }
+        
+       

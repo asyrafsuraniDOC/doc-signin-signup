@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="active-menu" content="">
+        <title>Sign In Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="./styles/bootstrap-grid.min.css">  
+        <link rel="stylesheet" type="text/css" href="./styles/styles.css">
+        
+        <script>
+            function passwordVisible() {
+                var x = document.getElementById("password");
+                if (x.type === "password") {
+                x.type = "text";
+                } else {
+                x.type = "password";
+                }
+            }
+
+            //validate email, phone and password
+            function validateForm(){
+
+                var e=document.getElementById("email").value;
+                var n=document.getElementById("password").value;
+
+                // validate email
+                // var email_filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})|([0-9]{10,11})+$/;
+                // if(e == "" || !email_filter.test(e)){
+                //     return alert("Please provide a valid email address");
+                // }
+
+                if( /[A-Za-z]/.test(e)){
+                    //validate email
+                    var email_filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})|([0-9]{10,11})+$/;
+                    if (!email_filter.test(e) ) {
+                        return alert("Please provide a valid email address");
+
+                    }
+                }
+                else{
+                    //validate phone
+                    var phone_filter = /[0-9]{10}/;
+                    if (!phone_filter.test(e) ) {
+                        return alert("Please provide a valid phone number or email");
+                    }
+                }
+
+                //validate password
+                var password_filter = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+                    if(n == "" || !password_filter.test(n)){
+                    return alert("Please provide a valid password");
+                }                
+
+            }
+
+            // function buttonDisableEnable(input) {
+            //     var btn = document.getElementById('submitbutton');
+            //     if (input.value != '') {
+            //         btn.disabled = false;
+            //     }
+            //     else {
+            //         btn.disabled = true;
+            //     }
+
+            //     // var e=id("form-app-email").value;
+            //     // var n=id("form-app-name").value;
+            //     // var p=id("form-app-phone").value;
+            //     // var ic=id("form-app-id").value;
+
+            //     // // validate email
+            //     // var email_filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})|([0-9]{10,11})+$/;
+            //     // if(e == "" || !email_filter.test(e)){
+            //     //     return alert("Please provide a valid email address");
+            //     // }
+
+            //     // //validate phone
+            //     // var phone_filter = /[0-9]{11}/;
+            //     //     if(p == "" || !phone_filter.test(p)){
+            //     //     return alert("Please provide a valid phone number");
+            //     // }
+            // } 
+            
+
+            
+        </script>
+    </head>
+
+    <body>
+
+        <section class="container-fluid">
+            <div class="row">
+
+                <!-- Login Background Image -->
+                <div class="login-image-column">
+                    <div class="login-image"><img style="height: 58x;width: 84px;" src="./images/doctorOnCall-icon.png"></div>
+                </div>
+
+                <!-- Login Form Start -->
+                <div class="login-form-column">
+
+                    <a href="#" class="login-back">
+                        <img style="margin-right: 10px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAAAwklEQVRoge3ZQQrCMBRF0YsK7smtuB87ch+6CNfjIizEgQY6qElLU/NS3oFO238JFPoLZmaWtqs9QAkdcAcOtQdZogPC92o2ZhjRbMxYRHMxqYhmYq7kIwLwAk6VZsyachIB6IFzpRmzHKHCESococIRKhyhQjpizmdnWG2KCi4In8pcjlHlGFWOUeUYVY5RtYkFXTTlZG6Ir0yjVEwzEdFYjPzy+pdhTPGIfcmbZTyAI/Dk86bq//jsVWziZ6iZ2TJvqKlFSv81jt8AAAAASUVORK5CYII=">
+                        Back
+                    </a>
+                    
+                    <div id="form" class="login-form-padding">
+                        <div class="login-welcome-text">Welcome Back</div>
+                        <div class="login-text">Need a DoctorOnCall account? <a href="#" style="text-decoration:none;color: #41c0f1;">Create an account</a></div>
+                        
+                        <div class="login-division-border"></div>
+                        
+                        <div class="login-smalltext">Email / Mobile Number</div>
+                        <input id="email" type="text" class="login-textfield" placeholder="example@gmail.com / 0198928882" />
+
+                        <div class="login-smalltext">Password</div>
+                        <input id="password" type="password" class="login-textfield" placeholder="Password"/> 
+                        <span onclick="passwordVisible()" class="password-visible-icon">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAADc0lEQVRYhe2WTWhcVRTHf+dOGidEgjZurE1QKYjSbrqx0urCRXHR6kYXiprOmzcdkohCLSJ+8VCqgpUuCrXJvI9OGKVO3RRBUEHELix0UYogiFLbmVgCajRkokzmzTsu8iaOdjozaeNCmv/m8e45nP/vfnDuhTVd75JuE1VVXNfdKiIPi8gO4FbgNqAHuATMqOoZEfm4XC6fchwnXBWAYrGYqFQqT6vqq8AdXfL+oqoH6/X64Ww2+8dVA7iuu11EJoF7AESkpKonVfUTVb3Y19f308LCQphIJDao6kYR2Skiu4HNcYlLIvKcZVkfrRjA9/29qnoY6AUuisibpVLJdRwnagfdAAfeEpH746HJcrk83mpbWgLkcrmNxphvgJtE5GCtVnspm83WOhk3S1XF87xRETkEVEVkm2VZ33ZdIJfLbXNd94mVmLaS67rbXdd94FrrrOk60dTUVL/v+1v/q/pBEGzxPG9D85hpCt5eq9V+UNVP8/n84GqbF4vF3iiKPgS+D4Kg0R/+BkilUheAs8AtYRgeVdWu74luVKlUDgB3A+cXFxdPXwYAYIwZA34HHvU87+XVMvd9/0lVfR6oRVGUaW5q/wBIpVIXROQxoCYib3ie9+IqmR9jqeuOZjKZ083xy5bZcRwzNDT0OfAggKoWqtXq6Pj4eGUlxhMTE+t6enoOAPtjnzOWZd0rInpFAMdxzPDwcE5VLeBPoA7cCEyr6iv1ev2DTndCPIFdwNss7XkY17kBOGJZ1jPNEMsAxWIxMT8/HwBPAQvAbmPMdBRFeeC+OG0GOC4iX4rIuUQi8XMymYzm5uYGRWQzsENEHgfujPO/i6JojzFmADgJJP8NsQzged4+4F1gXlV32bb9FSzdar7vvwY47WbeQkfDMHy2sWKe5+1sQKjqHtu289B0CI0xR0TkhIg81DAHiEnvin/fV9XXgS9EpAQ0lnJGVU8B7wCT8dhQ83al0+nPgEeAYGBgoLBcv9M04rfBeYAwDDdls9lSI+b7/qyq3lytVtePjY39BpDP5wfDMJwGeqMo2pTJZH5sV9+0CwKIyD5gHXC82fxKGhkZ+RU4ARhjzN5O+W0BCoXCgIhYAKp6qFOxJr0Xf+0gCJJXDTA7O1sVkReASdu2z3brnk6nvwaOqer+/v7+tm/Ia+r3rc7Amv53+gvdi3/zy1csxgAAAABJRU5ErkJggg=="> 
+                        </span>                       
+                        
+                                                
+                        <div class="login-text">
+                            <label class="checkbox-contain">
+                                <input type="checkbox" checked="checked">                            
+                                <span class="checkmark"></span>                            
+                            </label>
+                            <span style="margin-left: 25px;">Remember me</span>
+                        </div>
+
+                        <input id="submitbutton" onclick="validateForm()" type="submit" value="Sign In" class="login-signIn-btn" />
+                        <div class="login-or">OR</div>
+                        <div class="login-google-btn-display">
+                            <div class="google-icon">
+                                    <svg viewBox="0 0 48 48"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path></svg>
+                            </div>
+                            <button class="login-signIn-google-btn">Sign In With Google</button>
+                        </div>
+                        
+
+                        <div class="login-forgot-text">
+                            <a href="#" style="text-decoration: none;color: unset;">Forgot Password?</a>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Login Form End -->
+
+            </div>
+        </section>
+
+    </body>
+</html>
