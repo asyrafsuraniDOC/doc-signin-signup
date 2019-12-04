@@ -132,10 +132,10 @@
         background-color: #41c0f1;
     } */
 
-    /* input[type="submit" i]:disabled {
-        color: red;
-        background: black;
-    } */
+    .login-signIn-btn:disabled {
+        color: #fff;
+        background-color: #D5D5D5;
+    }
 
     .login-signIn-google-btn{
         background-color: #4285F4;

@@ -116,14 +116,16 @@
             //     document.querySelector(".message-password-requirement").style.display = "none";
             // }
 
-            // function buttonDisableEnable(input) {
-            //     var btn = document.getElementById('submitbutton');
-            //     if (input.value != '') {
-            //         btn.disabled = false;
-            //     }
-            //     else {
-            //         btn.disabled = true;
-            //     }
+            function buttonDisableEnable() {
+                var btn = document.getElementById('submitbutton');
+                var emailfield = document.getElementById('email');
+                var passwordfield = document.getElementById("password");
+                if (emailfield.value != '' && passwordfield.value != '') {
+                    btn.disabled = false;
+                }
+                else {
+                    btn.disabled = true;
+                }
 
             //     // var e=id("form-app-email").value;
             //     // var n=id("form-app-name").value;
@@ -141,7 +143,7 @@
             //     //     if(p == "" || !phone_filter.test(p)){
             //     //     return alert("Please provide a valid phone number");
             //     // }
-            // }
+            }
             
         </script>
     </head>
@@ -173,10 +175,10 @@
                         <div class="login-division-border"></div>
                         
                         <div class="login-smalltext">Email / Mobile Number</div>
-                        <input id="email" type="text" class="login-textfield" placeholder="example@gmail.com / 0198928882" />
+                        <input id="email" onkeyup="buttonDisableEnable()" type="text" class="login-textfield" placeholder="example@gmail.com / 0198928882" />
 
                         <div class="login-smalltext">Password</div>
-                        <input id="password" onkeyup="displayValidateRequire()" type="password" class="login-textfield" placeholder="Password"/> 
+                        <input id="password" onkeyup="displayValidateRequire();buttonDisableEnable()" type="password" class="login-textfield" placeholder="Password"/> 
                         <span id="password-icon" onclick="passwordVisible()" class="password-visible-icon"></span>
                                                 
                         <div class="message-password-requirement">
@@ -186,7 +188,7 @@
                             <p id="length" class="invalid">Minimum <b>8 characters</b></p>
                         </div>
 
-                        <input id="submitbutton" onclick="validateForm()" type="submit" value="Sign Up" class="login-signIn-btn" />
+                        <input id="submitbutton" onclick="validateForm()" type="submit" value="Sign Up" class="login-signIn-btn" disabled/>
                         <div class="login-or">OR</div>
                         <div class="login-google-btn-display">
                             <div class="google-icon">
