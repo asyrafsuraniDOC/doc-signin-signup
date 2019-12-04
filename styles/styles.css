@@ -20,6 +20,11 @@
         width:100%;
     }
 
+    .img-bg-login{
+        height: 58x;
+        width: 84px;
+    }
+
     .login-form-column{  
         /* margin: 8px;               */
         width:65%;
@@ -46,6 +51,15 @@
         color:#3c3c3c;
         font-size:14px;
         line-height: 23px;
+    }
+
+    .subtext-link{        
+        color: #41c0f1;
+        text-decoration:none;
+    }
+
+    .remember-me-text-margin{
+        margin-left: 25px;
     }
 
     .password-validation-text{
@@ -82,6 +96,10 @@
 
     .login-back img{
         width: 18px;
+    }
+
+    .login-back-chevron{
+        margin-right: 10px;
     }
 
     .login-textfield{
@@ -163,6 +181,11 @@
         line-height: 23px;
         margin-top: 40px;
         text-align: center;
+    }
+
+    .term-condition-link{        
+        color: #2E5AA9;
+        text-decoration: none;
     }
 
     .password-visible-icon {
