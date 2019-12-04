@@ -14,10 +14,19 @@
             //show password
             function passwordVisible() {
                 var x = document.getElementById("password");
+
+                if(document.getElementById("password-icon").classList == "password-visible-icon"){
+                    document.getElementById("password-icon").classList.add("password-hide-icon")
+                    document.getElementById("password-icon").classList.remove("password-visible-icon")
+                }else{
+                    document.getElementById("password-icon").classList.remove("password-hide-icon")
+                    document.getElementById("password-icon").classList.add("password-visible-icon")
+                }
+
                 if (x.type === "password") {
-                x.type = "text";
+                    x.type = "text";
                 } else {
-                x.type = "password";
+                    x.type = "password";
                 }
             }
 
@@ -38,7 +47,6 @@
                     var email_filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})|([0-9]{10,11})+$/;
                     if (!email_filter.test(e) ) {
                         return alert("Please provide a valid email address");
-
                     }
                 }
                 else{
@@ -132,9 +140,7 @@
             //     //     if(p == "" || !phone_filter.test(p)){
             //     //     return alert("Please provide a valid phone number");
             //     // }
-            // } 
-            
-
+            // }
             
         </script>
     </head>
@@ -153,7 +159,7 @@
                 <div class="login-form-column">
 
                     <a href="#" class="login-back">
-                        <img class="login-back-chevron" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAAAwklEQVRoge3ZQQrCMBRF0YsK7smtuB87ch+6CNfjIizEgQY6qElLU/NS3oFO238JFPoLZmaWtqs9QAkdcAcOtQdZogPC92o2ZhjRbMxYRHMxqYhmYq7kIwLwAk6VZsyachIB6IFzpRmzHKHCESococIRKhyhQjpizmdnWG2KCi4In8pcjlHlGFWOUeUYVY5RtYkFXTTlZG6Ir0yjVEwzEdFYjPzy+pdhTPGIfcmbZTyAI/Dk86bq//jsVWziZ6iZ2TJvqKlFSv81jt8AAAAASUVORK5CYII=">
+                        <svg viewBox="0 0 320 512" class="login-back-chevron"><path d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z" class=""></path></svg>
                         Back
                     </a>
                     
@@ -168,9 +174,7 @@
 
                         <div class="login-smalltext">Password</div>
                         <input id="password" onkeyup="displayValidateRequire()" type="password" class="login-textfield" placeholder="Password"/> 
-                        <span onclick="passwordVisible()" class="password-visible-icon">
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAADc0lEQVRYhe2WTWhcVRTHf+dOGidEgjZurE1QKYjSbrqx0urCRXHR6kYXiprOmzcdkohCLSJ+8VCqgpUuCrXJvI9OGKVO3RRBUEHELix0UYogiFLbmVgCajRkokzmzTsu8iaOdjozaeNCmv/m8e45nP/vfnDuhTVd75JuE1VVXNfdKiIPi8gO4FbgNqAHuATMqOoZEfm4XC6fchwnXBWAYrGYqFQqT6vqq8AdXfL+oqoH6/X64Ww2+8dVA7iuu11EJoF7AESkpKonVfUTVb3Y19f308LCQphIJDao6kYR2Skiu4HNcYlLIvKcZVkfrRjA9/29qnoY6AUuisibpVLJdRwnagfdAAfeEpH746HJcrk83mpbWgLkcrmNxphvgJtE5GCtVnspm83WOhk3S1XF87xRETkEVEVkm2VZ33ZdIJfLbXNd94mVmLaS67rbXdd94FrrrOk60dTUVL/v+1v/q/pBEGzxPG9D85hpCt5eq9V+UNVP8/n84GqbF4vF3iiKPgS+D4Kg0R/+BkilUheAs8AtYRgeVdWu74luVKlUDgB3A+cXFxdPXwYAYIwZA34HHvU87+XVMvd9/0lVfR6oRVGUaW5q/wBIpVIXROQxoCYib3ie9+IqmR9jqeuOZjKZ083xy5bZcRwzNDT0OfAggKoWqtXq6Pj4eGUlxhMTE+t6enoOAPtjnzOWZd0rInpFAMdxzPDwcE5VLeBPoA7cCEyr6iv1ev2DTndCPIFdwNss7XkY17kBOGJZ1jPNEMsAxWIxMT8/HwBPAQvAbmPMdBRFeeC+OG0GOC4iX4rIuUQi8XMymYzm5uYGRWQzsENEHgfujPO/i6JojzFmADgJJP8NsQzged4+4F1gXlV32bb9FSzdar7vvwY47WbeQkfDMHy2sWKe5+1sQKjqHtu289B0CI0xR0TkhIg81DAHiEnvin/fV9XXgS9EpAQ0lnJGVU8B7wCT8dhQ83al0+nPgEeAYGBgoLBcv9M04rfBeYAwDDdls9lSI+b7/qyq3lytVtePjY39BpDP5wfDMJwGeqMo2pTJZH5sV9+0CwKIyD5gHXC82fxKGhkZ+RU4ARhjzN5O+W0BCoXCgIhYAKp6qFOxJr0Xf+0gCJJXDTA7O1sVkReASdu2z3brnk6nvwaOqer+/v7+tm/Ia+r3rc7Amv53+gvdi3/zy1csxgAAAABJRU5ErkJggg=="> 
-                        </span>
+                        <span id="password-icon" onclick="passwordVisible()" class="password-visible-icon"></span>
                                                 
                         <div class="message-password-requirement">
                             <p id="letter" class="invalid">A <b>lowercase</b> letter</p>

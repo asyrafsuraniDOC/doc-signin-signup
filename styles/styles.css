@@ -14,8 +14,8 @@
         background-image: url('../images/DOC-Sign-Up-background.png');
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: right;
-        height: 753px;
+        background-position: center;
+        height: 100vh;
         padding: 20px 30px;
         width:100%;
     }
@@ -94,8 +94,8 @@
         text-decoration: none;
     }
 
-    .login-back img{
-        width: 18px;
+    .login-back svg{
+        width: 9px;
     }
 
     .login-back-chevron{
@@ -188,18 +188,35 @@
         text-decoration: none;
     }
 
-    .password-visible-icon {
+    .password-visible-icon { 
+        background-image: url('../images/passwordVisible.svg');
+        background-repeat: no-repeat;       
         cursor: pointer;
         float: right;
+        height: 15px;
         margin-right: 10px;
-        margin-top: -45px;
+        margin-top: -40px;
         position: relative;
+        width: 20px;
         z-index: 2;
     }
 
-    .password-visible-icon img{
+    .password-hide-icon { 
+        background-image: url('../images/passwordHide.svg');
+        background-repeat: no-repeat;       
+        cursor: pointer;
+        float: right;
+        height: 15px;
+        margin-right: 10px;
+        margin-top: -40px;
+        position: relative;
         width: 20px;
+        z-index: 2;
     }
+
+    /* .password-visible-icon svg{
+        width: 20px;
+    } */
 
     @media (max-width:768px){
         .login-form-padding{
@@ -223,7 +240,7 @@
 
         .login-back{
             padding: unset;
-            padding-bottom: 50px;
+            padding-bottom: 30px;
         }
     }
 
