@@ -104,8 +104,9 @@
             // When the user clicks outside of the password field, hide the message box
             // function hidePasswordMessage() {
             //     document.querySelector(".message-password-requirement").style.display = "none";
-            // }      
+            // }
 
+            //function disable and enable button sign up or sign in
             function buttonDisableEnable() {
                 var btn = document.getElementById('submitbutton');
                 var emailfield = document.getElementById("email");
@@ -146,7 +147,7 @@
                     
                     <div id="form" class="login-form-padding">
                         <div class="login-welcome-text">Create An Account</div>
-                        <div class="login-text">Already have a DoctorOnCall account? <a href="#" class="subtext-link">Sign In</a></div>
+                        <div class="login-text">Already have a DoctorOnCall account? <a href="Sign-In-DOC.html" class="subtext-link">Sign In</a></div>
                         
                         <div class="login-division-border"></div>
                         
@@ -160,9 +161,6 @@
                         <div id="password-error" class="error-textfield"></div>
                                                 
                         <div class="message-password-requirement">
-                            <!-- <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-                            <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-                            <p id="number" class="invalid">A <b>number</b></p> -->
                             <div id="length" class="invalid">Minimum <b>8 characters</b></div>
                         </div>
 
