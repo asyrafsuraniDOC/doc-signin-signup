@@ -272,9 +272,9 @@
         width: 18px;
     }
 
-    .checkbox-contain:hover input ~ .checkmark {
+    /* .checkbox-contain:hover input ~ .checkmark {
         background-color: #2E5AA9;
-    }
+    } */
 
     .checkbox-contain input:checked ~ .checkmark {
         background-color: #2E5AA9;
