@@ -46,21 +46,25 @@
                     //validate email
                     var email_filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})|([0-9]{10,11})+$/;
                     if (!email_filter.test(e) ) {
-                        return alert("Please provide a valid email address");
+                        // return alert("Please provide a valid email address");
+                        document.getElementById("email-error").innerHTML = 'Please provide a valid email address'
+
                     }
                 }
                 else{
                     //validate phone
                     var phone_filter = /[0-9]{10}/;
                     if (!phone_filter.test(e)) {
-                        return alert("Please provide a valid phone number or email");
+                        // return alert("Please provide a valid phone number or email");
+                        document.getElementById("email-error").innerHTML = 'Please provide a valid phone number or email'
                     }
                 }
 
                 //validate password
-                var password_filter = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+                var password_filter = /([a-zA-Z0-9]{8})/;
                     if(n == "" || !password_filter.test(n)){
-                    return alert("Please provide a valid password");
+                    // return alert("Please provide a valid password");
+                    document.getElementById("password-error").innerHTML = 'Please provide a valid password'
                 }                
 
             }            
@@ -68,43 +72,45 @@
             // When the user starts to type something inside the password field, display validation
             function displayValidateRequire() {
                 var myInput = document.getElementById("password");
-                var letter = document.getElementById("letter");
-                var capital = document.getElementById("capital");
-                var number = document.getElementById("number");
+                // var letter = document.getElementById("letter");
+                // var capital = document.getElementById("capital");
+                // var number = document.getElementById("number");
                 var length = document.getElementById("length");
 
-                // Display Validate lowercase letters
-                var lowerCaseLetters = /[a-z]/g;
-                utilizeValidate(myInput,lowerCaseLetters,letter)
+                // // Display Validate lowercase letters
+                // var lowerCaseLetters = /[a-z]/g;
+                // utilizeValidate(myInput,lowerCaseLetters,letter)
                 
-                // Display Validate capital letters
-                var upperCaseLetters = /[A-Z]/g;
-                utilizeValidate(myInput,upperCaseLetters,capital)
+                // // Display Validate capital letters
+                // var upperCaseLetters = /[A-Z]/g;
+                // utilizeValidate(myInput,upperCaseLetters,capital)
 
-                // Display Validate numbers
-                var numbers = /[0-9]/g;
-                utilizeValidate(myInput,numbers,number)
+                // // Display Validate numbers
+                // var numbers = /[0-9]/g;
+                // utilizeValidate(myInput,numbers,number)
 
                 // Display Validate length
                 if(myInput.value.length >= 8) {
                     length.classList.remove("invalid");
+                    length.innerHTML="Your password is secure and you're all set!"
                     length.classList.add("valid");
                 } else {
                     length.classList.remove("valid");
                     length.classList.add("invalid");
+                    length.innerHTML="Minimum <b>8 characters</b>"
                 }
             }
 
             //utility function for display validation
-            function utilizeValidate(input,checkvalidate,idItem){
-                if(input.value.match(checkvalidate)) {  
-                    idItem.classList.remove("invalid");
-                    idItem.classList.add("valid");
-                } else {
-                    idItem.classList.remove("valid");
-                    idItem.classList.add("invalid");
-                }
-            }
+            // function utilizeValidate(input,checkvalidate,idItem){
+            //     if(input.value.match(checkvalidate)) {  
+            //         idItem.classList.remove("invalid");
+            //         idItem.classList.add("valid");
+            //     } else {
+            //         idItem.classList.remove("valid");
+            //         idItem.classList.add("invalid");
+            //     }
+            // }
 
             // When the user clicks on the password field, show the message box
             // function showPasswordMessage() {
@@ -115,6 +121,16 @@
             // function hidePasswordMessage() {
             //     document.querySelector(".message-password-requirement").style.display = "none";
             // }
+
+            function showErrorMessage() {
+                document.getElementById("password-error").style.display = "block";
+                document.getElementById("email-error").style.display = "block";
+            }
+
+            function hideErrorMessage() {
+                document.getElementById("password-error").style.display = "none";
+                document.getElementById("email-error").style.display = "none";
+            }
 
             function buttonDisableEnable() {
                 var btn = document.getElementById('submitbutton');
@@ -158,17 +174,19 @@
                         <div class="login-division-border"></div>
                         
                         <div class="login-smalltext">Email / Mobile Number</div>
-                        <input id="email" onkeyup="buttonDisableEnable()" type="text" class="login-textfield" placeholder="example@gmail.com / 0198928882" />
+                        <input id="email" onkeyup="buttonDisableEnable()" onfocus="hideErrorMessage()" onblur="showErrorMessage()" type="text" class="login-textfield" placeholder="example@gmail.com / 0198928882" />
+                        <div id="email-error"></div>
 
                         <div class="login-smalltext">Password</div>
-                        <input id="password" onkeyup="displayValidateRequire();buttonDisableEnable()" type="password" class="login-textfield" placeholder="Password"/> 
+                        <input id="password" onkeyup="displayValidateRequire();buttonDisableEnable()" onfocus="hideErrorMessage()" onblur="showErrorMessage()" type="password" class="login-textfield" placeholder="Password"/> 
                         <span id="password-icon" onclick="passwordVisible()" class="password-visible-icon"></span>
+                        <div id="password-error"></div>
                                                 
                         <div class="message-password-requirement">
-                            <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                            <!-- <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
                             <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-                            <p id="number" class="invalid">A <b>number</b></p>
-                            <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                            <p id="number" class="invalid">A <b>number</b></p> -->
+                            <div id="length" class="invalid">Minimum <b>8 characters</b></div>
                         </div>
 
                         <input id="submitbutton" onclick="validateForm()" type="submit" value="Sign Up" class="login-signIn-btn" disabled/>

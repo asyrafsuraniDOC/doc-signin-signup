@@ -218,17 +218,35 @@
         width: 20px;
     } */
 
-    @media (max-width:768px){
-        .login-form-padding{
-            padding: 0 20%;
-        }
-    }
-
-    @media (max-width:576px){
+    /* Breakpoint for Ipad Pro*/
+    @media (max-width:1024px){
         .login-image-column{
             display: none;
         }
 
+        .login-form-padding{
+            padding: 0 20%;
+        }
+
+        .login-form-column{  
+            padding: 20px;
+            width:100%;
+        }
+
+        .login-back{
+            padding: unset;
+            padding-bottom: 70px;
+        }
+
+    }
+
+    /* @media (max-width:768px){
+        .login-back{
+            padding-bottom: 30px;
+        }
+    } */
+
+    @media (max-width:576px){
         .login-form-padding{
             padding: unset;
         }
@@ -239,7 +257,6 @@
         }
 
         .login-back{
-            padding: unset;
             padding-bottom: 30px;
         }
     }
@@ -316,33 +333,34 @@
         display:block;
     }
     
-    .message-password-requirement p {        
+    .message-password-requirement div{        
         font-size:12px;
-        margin: unset;
         margin-bottom: 15px;
-        padding: 0 35px;
     }
     
     /* Add a green text color and a checkmark when the requirements are right */
     .valid {
-        color: green;
+        background-color: #e0eed1;
+        border-radius: 4px;
+        padding: 10px 25px;
     }
     
     .valid:before {
         position: relative;
-        left: -35px;
-        content: "✔";
+        left: -10px;
+        content: "\2713";
     }
     
     /* Add a red text color and an "x" when the requirements are wrong */
     .invalid {
-        color: red;
+        color: #3C3C3C;
+        padding: 0 15px;
     }
     
     .invalid:before {
         position: relative;
-        left: -35px;
-        content: "✖";
+        left: -15px;
+        content: "\2022";
     }
         
        
